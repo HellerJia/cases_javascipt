@@ -1,0 +1,100 @@
+#calculator-body {
+  background-color: #dddddd;
+  width: 300px;
+  height: 500px;
+  margin: 50px;
+}
+
+#calculator-header {
+  height: 30px;
+}
+
+#calculator-title {
+  position: absolute;
+  margin: 9px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#windows-options {
+  float: right;
+}
+
+.windows-option-button {
+  height: 30px;
+  width: 40px;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+#calculator-alt {
+  height: 40px;
+}
+
+#standard {
+  position: absolute;
+  margin: 9px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#screen {
+  height: 80px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+#screen-text {
+  text-align: right;
+  margin: 0px;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttons-m-common {
+  margin: 0px;
+  height: 20px;
+  width: 46px;
+  border: none;
+  font-size: 13px;
+  text-align: center;
+  background: none;
+}
+
+.buttons-m-unable {
+  color: #cccccc;
+}
+
+#calculator-main {
+  margin-top: 5px;
+}
+
+.main-buttons-line {
+  height: 52px;
+  width: 298px;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-buttons {
+  height: 50px;
+  width: 75px;
+  margin-top: 3px;
+  margin-left: 3px;
+  padding: 0px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-buttons-white {
+  background-color: #fafafa;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.main-buttons-blue {
+  background-color: #a2a2ff;
+}
