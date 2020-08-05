@@ -64,6 +64,7 @@
 
 .buttons-m-unable {
   color: #cccccc;
+  pointer-events: none;
 }
 
 #calculator-main {
@@ -89,12 +90,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.main-buttons-white {
+.main-buttons-number {
   background-color: #fafafa;
   font-size: 16px;
   font-weight: bold;
 }
 
-.main-buttons-blue {
+.main-buttons-calculate {
   background-color: #a2a2ff;
 }
