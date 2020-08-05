@@ -46,7 +46,7 @@
 }
 
 #google-input-border {
-  margin: 20px;
+  margin: 20px auto;
   width: 582px;
   height: 40px;
   border-color: rgb(223, 225, 229);
