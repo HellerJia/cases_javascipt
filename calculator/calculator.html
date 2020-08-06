@@ -6,7 +6,7 @@
   <title>Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body">
   <div id="calculator-body">
     <div id="calculator-header">
       <p id="calculator-title">Calculator</p>
@@ -38,40 +38,41 @@
       <div class="main-buttons-line">
         <button class="main-buttons">%</button>
         <button class="main-buttons">CE</button>
-        <button class="main-buttons">C</button>
-        <button class="main-buttons">Backspace</button>
+        <button class="main-buttons" onclick="clearNum()">C</button>
+        <button id="backspace" class="main-buttons">Backspace</button>
       </div>
       <div class="main-buttons-line">
         <button class="main-buttons">1/x</button>
         <button class="main-buttons">x^2</button>
         <button class="main-buttons">sqrt</button>
-        <button class="main-buttons">➗</button>
+        <button class="main-buttons" onclick="inputOpt('/')">➗</button>
       </div>
       <div class="main-buttons-line">
-        <button class="main-buttons main-buttons-number">7</button>
-        <button class="main-buttons main-buttons-number">8</button>
-        <button class="main-buttons main-buttons-number">9</button>
-        <button class="main-buttons">✖</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(7)">7</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(8)">8</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(9)">9</button>
+        <button class="main-buttons" onclick="inputOpt('*')">✖</button>
       </div>
       <div class="main-buttons-line">
-        <button class="main-buttons main-buttons-number">4</button>
-        <button class="main-buttons main-buttons-number">5</button>
-        <button class="main-buttons main-buttons-number">6</button>
-        <button class="main-buttons">➖</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(4)">4</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(5)">5</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(6)">6</button>
+        <button class="main-buttons" onclick="inputOpt('-')">➖</button>
       </div>
       <div class="main-buttons-line">
-        <button class="main-buttons main-buttons-number">1</button>
-        <button class="main-buttons main-buttons-number">2</button>
-        <button class="main-buttons main-buttons-number">3</button>
-        <button class="main-buttons">➕</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(1)">1</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(2)">2</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(3)">3</button>
+        <button class="main-buttons" onclick="inputOpt('+')">➕</button>
       </div>
       <div class="main-buttons-line">
         <button class="main-buttons main-buttons-number">+/-</button>
-        <button class="main-buttons main-buttons-number">0</button>
+        <button class="main-buttons main-buttons-number" onclick="inputNum(0)">0</button>
         <button class="main-buttons main-buttons-number">.</button>
-        <button class="main-buttons main-buttons-calculate">＝</button>
+        <button class="main-buttons main-buttons-calculate" onclick="inputGo()">＝</button>
       </div>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

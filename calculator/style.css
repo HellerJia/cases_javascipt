@@ -1,8 +1,17 @@
+:root {
+  --buttons-m-common-width: 46px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
 #calculator-body {
   background-color: #dddddd;
-  width: 300px;
-  height: 500px;
-  margin: 50px;
+  width: 50%;
+  margin-left: 25%;
+  float: left;
 }
 
 #calculator-header {
@@ -40,22 +49,27 @@
 }
 
 #screen {
-  height: 80px;
+  height: 10%;
   padding-top: 10px;
   padding-right: 10px;
 }
 
 #screen-text {
   text-align: right;
-  margin: 0px;
-  font-size: 50px;
+  height: 100%;
+  margin: 0;
+  font-size: 37px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#buttons-m {
+  height: 5%;
 }
 
 .buttons-m-common {
   margin: 0px;
-  height: 20px;
-  width: 46px;
+  height: 100%;
+  width: var(--buttons-m-common-width);
   border: none;
   font-size: 13px;
   text-align: center;
@@ -68,21 +82,24 @@
 }
 
 #calculator-main {
-  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-buttons-line {
-  height: 52px;
-  width: 298px;
+  height: 16.66%;
+  width: 100%;
+  margin-bottom: 2px;
   display: flex;
   flex-direction: row;
 }
 
 .main-buttons {
-  height: 50px;
-  width: 75px;
-  margin-top: 3px;
-  margin-left: 3px;
+  float: left;
+  height: 100%;
+  width: 25%;
+  margin: 0 1px;
   padding: 0px;
   text-align: center;
   background-color: #f1f1f1;
