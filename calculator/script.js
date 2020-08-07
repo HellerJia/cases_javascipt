@@ -64,13 +64,13 @@ function calculate() {
       data.num += data.cacheNum;
       break;
     case '-':
-      data.num -= data.cacheNum;
+      data.num = data.cacheNum - data.num;
       break;
     case '*':
       data.num *= data.cacheNum;
       break;
     case '/':
-      data.num /= data.cacheNum;
+      data.num = data.cacheNum / data.num;
       break;
   }
   updateScreen();
