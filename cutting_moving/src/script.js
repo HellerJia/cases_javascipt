@@ -39,7 +39,7 @@ function randomIndex() {
   }
 }
 
-function gamePint(fix, x, y) {
+function gamePaint(fix, x, y) {
   gameCanvas.clearRect(0, 0, gameWindow.width, gameWindow.height);
   for (let i = 0; i < itemsProperty.columnNum * itemsProperty.lineNum; i++) {
     if (i !== fix) {
@@ -54,15 +54,17 @@ function gamePint(fix, x, y) {
         gameWindowItemSize.gameWindowItemHeight);
     }
   }
-  gameCanvas.drawImage(img,
-    Math.floor(pictureItemsArray[fix] % itemsProperty.columnNum) * sliceWidth,
-    Math.floor(pictureItemsArray[fix] / itemsProperty.columnNum) * sliceHeight,
-    sliceWidth,
-    sliceHeight,
-    x - gameWindowItemSize.gameWindowItemWidth / 2,
-    y - gameWindowItemSize.gameWindowItemHeight / 2,
-    gameWindowItemSize.gameWindowItemWidth,
-    gameWindowItemSize.gameWindowItemHeight);
+  if (fix !== undefined) {
+    gameCanvas.drawImage(img,
+      Math.floor(pictureItemsArray[fix] % itemsProperty.columnNum) * sliceWidth,
+      Math.floor(pictureItemsArray[fix] / itemsProperty.columnNum) * sliceHeight,
+      sliceWidth,
+      sliceHeight,
+      x - gameWindowItemSize.gameWindowItemWidth / 2,
+      y - gameWindowItemSize.gameWindowItemHeight / 2,
+      gameWindowItemSize.gameWindowItemWidth,
+      gameWindowItemSize.gameWindowItemHeight);
+  }
 }
 
 function checkFinishState() {
@@ -79,14 +81,6 @@ function itemLocateByMouse(x, y) {
     + Math.floor(y / gameWindowItemSize.gameWindowItemHeight) * itemsProperty.columnNum;
 }
 
-function ActionOnMouseDown(e) {
-  if (e.buttons !== 1 || isFinish) {
-    selectItem = null;
-    return;
-  }
-  selectItem = itemLocateByMouse(e.layerX, e.layerY);
-}
-
 function ActionOnMouseUp(e) {
   if (selectItem === null) {
     return;
@@ -97,7 +91,7 @@ function ActionOnMouseUp(e) {
   if (itemLocateByMouse(e.layerX, e.layerY) !== selectItem) {
     step++;
   }
-  gamePint();
+  gamePaint();
   document.getElementById('step').innerHTML = step;
   if (checkFinishState()) {
     isFinish = true;
@@ -106,26 +100,34 @@ function ActionOnMouseUp(e) {
     document.getElementById('result').innerHTML = '------';
   }
   selectItem = null;
+  gameWindow.onmouseup = null;
+  gameWindow.onmousemove = null;
 }
 
 function ActionOnMouseMove(e) {
   if (e.buttons === 1) {
-    gamePint(selectItem, e.layerX, e.layerY);
+    gamePaint(selectItem, e.layerX, e.layerY);
   }
+}
+
+function ActionOnMouseDown(e) {
+  if (e.buttons !== 1 || isFinish) {
+    selectItem = null;
+    return;
+  }
+  selectItem = itemLocateByMouse(e.layerX, e.layerY);
+  gameWindow.onmouseup = ActionOnMouseUp;
+  gameWindow.onmousemove = ActionOnMouseMove;
 }
 
 function ActionRegistration(flag) {
   document.getElementById('result').innerHTML = '------';
   if (flag) {
     gameWindow.onmousedown = ActionOnMouseDown;
-    gameWindow.onmouseup = ActionOnMouseUp;
-    gameWindow.onmousemove = ActionOnMouseMove;
     step = 0;
     document.getElementById('step').innerHTML = step;
   } else {
     gameWindow.onmousedown = null;
-    gameWindow.onmouseup = null;
-    gameWindow.onmousemove = null;
     document.getElementById('step').innerHTML = '---';
   }
 }
@@ -146,7 +148,7 @@ function gameStart() {
   updateItemsProperty();
   initImgSlice();
   randomIndex();
-  gamePint();
+  gamePaint();
   ActionRegistration(isUpLoaded);
   isFinish = false;
 }
@@ -167,7 +169,7 @@ function uploadFile() {
 
 function reset() {
   gameCanvas.clearRect(0, 0, gameWindow.width, gameWindow.height);
-  ActionRegistration(isUpLoaded);
+  ActionRegistration(false);
 }
 
 document.getElementById('upload-button').onclick = uploadFile;
