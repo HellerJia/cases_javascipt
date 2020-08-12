@@ -45,23 +45,40 @@ html,body {
 }
 
 #buttons-box {
+  height: 30%;
+  margin-top: 8%;
   display: flex;
   flex-direction: column;
 }
 
 #upload-button {
   width: 70%;
-  margin: 13% auto 0;
+  margin: auto;
 }
 
 #reset-button {
   width: 70%;
-  margin: 8% auto 0;
+  margin: auto;
+}
+
+#items-input {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: inline-flex;
+}
+
+.auto-flex {
+  margin: auto;
+}
+
+.item-input-size {
+  width: 20px;
 }
 
 #start-button {
   width: 70%;
-  margin: 8% auto 0;
+  margin: auto;
 }
 
 #game-main-console {

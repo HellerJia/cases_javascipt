@@ -12,7 +12,14 @@
       <div id="aim-img-box"><img id="aim-img" src="bg.png" alt=""></div>
       <div id="buttons-box">
         <button id="upload-button">Upload Image</button>
+        <input type="file" accept="image/png,image/jpg,image/jpeg" id="upload-file" style="display: none;"/>
         <button id="reset-button">Reset</button>
+        <div id="items-input">
+          <p class="auto-flex">Column: </p>
+          <input id="column-input" type="text" class="auto-flex item-input-size">
+          <p class="auto-flex">Line: </p>
+          <input id="line-input" type="text" class="auto-flex item-input-size">
+        </div>
         <button id="start-button">Start</button>
       </div>
     </div>

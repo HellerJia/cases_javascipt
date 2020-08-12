@@ -24,7 +24,7 @@ function initImgSlice() {
 function randomIndex() {
   pictureItemsArray.length = 0;
   for (let i = 0; i < itemsPorperty.columnNum * itemsPorperty.lineNum;) {
-    const ran = Math.floor(Math.random() * 9);
+    const ran = Math.floor(Math.random() * itemsPorperty.columnNum * itemsPorperty.lineNum);
     let exist = false;
     for (let j = 0; j < i; j++) {
       if (ran === pictureItemsArray[j]) {
@@ -45,18 +45,18 @@ function gamePint(fix, x, y) {
     if (i !== fix) {
       gameCanvas.drawImage(img,
         Math.floor(pictureItemsArray[i] % itemsPorperty.columnNum) * sliceWidth,
-        Math.floor(pictureItemsArray[i] / itemsPorperty.lineNum) * sliceHeight,
+        Math.floor(pictureItemsArray[i] / itemsPorperty.columnNum) * sliceHeight,
         sliceWidth,
         sliceHeight,
         Math.floor(i % itemsPorperty.columnNum) * gameWindowItemSize.gameWindowItemWidth,
-        Math.floor(i / itemsPorperty.lineNum) * gameWindowItemSize.gameWindowItemHeight,
+        Math.floor(i / itemsPorperty.columnNum) * gameWindowItemSize.gameWindowItemHeight,
         gameWindowItemSize.gameWindowItemWidth,
         gameWindowItemSize.gameWindowItemHeight);
     }
   }
   gameCanvas.drawImage(img,
     Math.floor(pictureItemsArray[fix] % itemsPorperty.columnNum) * sliceWidth,
-    Math.floor(pictureItemsArray[fix] / itemsPorperty.lineNum) * sliceHeight,
+    Math.floor(pictureItemsArray[fix] / itemsPorperty.columnNum) * sliceHeight,
     sliceWidth,
     sliceHeight,
     x - gameWindowItemSize.gameWindowItemWidth / 2,
@@ -81,14 +81,14 @@ function itemLocateByMouse(x, y) {
 
 function ActionOnMouseDown(e) {
   if (e.buttons !== 1 || isFinish) {
-    selectItem = undefined;
+    selectItem = null;
     return;
   }
   selectItem = itemLocateByMouse(e.layerX, e.layerY);
 }
 
 function ActionOnMouseUp(e) {
-  if (selectItem === undefined) {
+  if (selectItem === null) {
     return;
   }
   const tmp = pictureItemsArray[selectItem];
@@ -105,6 +105,7 @@ function ActionOnMouseUp(e) {
   } else {
     document.getElementById('result').innerHTML = '------';
   }
+  selectItem = null;
 }
 
 function ActionOnMouseMove(e) {
@@ -129,10 +130,20 @@ function ActionRegistration(flag) {
   }
 }
 
+function updateItemsPorperty() {
+  const columnInput = Math.floor(Number(document.getElementById('column-input').value));
+  const lineInput = Math.floor(Number(document.getElementById('line-input').value));
+  if (columnInput > 1 && lineInput > 1) {
+    itemsPorperty.columnNum = columnInput;
+    itemsPorperty.lineNum = lineInput;
+  }
+}
+
 function gameStart() {
   if (!isUpLoaded) {
     return;
   }
+  updateItemsPorperty();
   initImgSlice();
   randomIndex();
   gamePint();
@@ -141,19 +152,25 @@ function gameStart() {
 }
 
 function uploadImg() {
-  img.src = 'https://bit.ly/fcc-relaxing-cat';
-  document.getElementById('aim-img').src = 'https://bit.ly/fcc-relaxing-cat';
-  isUpLoaded = true;
+  // img.src = 'https://bit.ly/fcc-relaxing-cat';
+  // document.getElementById('aim-img').src = 'https://bit.ly/fcc-relaxing-cat';
+  if (this.files.length > 0) {
+    img.src = window.URL.createObjectURL(this.files.item(0));
+    document.getElementById('aim-img').src = window.URL.createObjectURL(this.files.item(0));
+    isUpLoaded = true;
+  }
+}
+
+function uploadFile() {
+  document.getElementById('upload-file').click();
 }
 
 function reset() {
-  img.src = 'bg.png';
-  document.getElementById('aim-img').src = 'bg.png';
   gameCanvas.clearRect(0, 0, gameWindow.width, gameWindow.height);
-  isUpLoaded = false;
   ActionRegistration(isUpLoaded);
 }
 
-document.getElementById('upload-button').onclick = uploadImg;
+document.getElementById('upload-button').onclick = uploadFile;
+document.getElementById('upload-file').onchange = uploadImg;
 document.getElementById('reset-button').onclick = reset;
 document.getElementById('start-button').onclick = gameStart;
