@@ -1,7 +1,7 @@
 const gameWindow = document.getElementById('game-main-window');
 const gameCanvas = gameWindow.getContext('2d');
 
-const itemsPorperty = { lineNum: 3, columnNum: 3 };
+const itemsProperty = { lineNum: 3, columnNum: 3 };
 const gameWindowItemSize = { gameWindowItemWidth: 0, gameWindowItemHeight: 0 };
 const pictureItemsArray = new Array(0);
 let sliceWidth;
@@ -15,16 +15,16 @@ let isFinish = false;
 let step = 0;
 
 function initImgSlice() {
-  sliceWidth = img.width / itemsPorperty.columnNum;
-  sliceHeight = img.height / itemsPorperty.lineNum;
-  gameWindowItemSize.gameWindowItemWidth = gameWindow.clientWidth / itemsPorperty.columnNum;
-  gameWindowItemSize.gameWindowItemHeight = gameWindow.clientHeight / itemsPorperty.lineNum;
+  sliceWidth = img.width / itemsProperty.columnNum;
+  sliceHeight = img.height / itemsProperty.lineNum;
+  gameWindowItemSize.gameWindowItemWidth = gameWindow.clientWidth / itemsProperty.columnNum;
+  gameWindowItemSize.gameWindowItemHeight = gameWindow.clientHeight / itemsProperty.lineNum;
 }
 
 function randomIndex() {
   pictureItemsArray.length = 0;
-  for (let i = 0; i < itemsPorperty.columnNum * itemsPorperty.lineNum;) {
-    const ran = Math.floor(Math.random() * itemsPorperty.columnNum * itemsPorperty.lineNum);
+  for (let i = 0; i < itemsProperty.columnNum * itemsProperty.lineNum;) {
+    const ran = Math.floor(Math.random() * itemsProperty.columnNum * itemsProperty.lineNum);
     let exist = false;
     for (let j = 0; j < i; j++) {
       if (ran === pictureItemsArray[j]) {
@@ -41,22 +41,22 @@ function randomIndex() {
 
 function gamePint(fix, x, y) {
   gameCanvas.clearRect(0, 0, gameWindow.width, gameWindow.height);
-  for (let i = 0; i < itemsPorperty.columnNum * itemsPorperty.lineNum; i++) {
+  for (let i = 0; i < itemsProperty.columnNum * itemsProperty.lineNum; i++) {
     if (i !== fix) {
       gameCanvas.drawImage(img,
-        Math.floor(pictureItemsArray[i] % itemsPorperty.columnNum) * sliceWidth,
-        Math.floor(pictureItemsArray[i] / itemsPorperty.columnNum) * sliceHeight,
+        Math.floor(pictureItemsArray[i] % itemsProperty.columnNum) * sliceWidth,
+        Math.floor(pictureItemsArray[i] / itemsProperty.columnNum) * sliceHeight,
         sliceWidth,
         sliceHeight,
-        Math.floor(i % itemsPorperty.columnNum) * gameWindowItemSize.gameWindowItemWidth,
-        Math.floor(i / itemsPorperty.columnNum) * gameWindowItemSize.gameWindowItemHeight,
+        Math.floor(i % itemsProperty.columnNum) * gameWindowItemSize.gameWindowItemWidth,
+        Math.floor(i / itemsProperty.columnNum) * gameWindowItemSize.gameWindowItemHeight,
         gameWindowItemSize.gameWindowItemWidth,
         gameWindowItemSize.gameWindowItemHeight);
     }
   }
   gameCanvas.drawImage(img,
-    Math.floor(pictureItemsArray[fix] % itemsPorperty.columnNum) * sliceWidth,
-    Math.floor(pictureItemsArray[fix] / itemsPorperty.columnNum) * sliceHeight,
+    Math.floor(pictureItemsArray[fix] % itemsProperty.columnNum) * sliceWidth,
+    Math.floor(pictureItemsArray[fix] / itemsProperty.columnNum) * sliceHeight,
     sliceWidth,
     sliceHeight,
     x - gameWindowItemSize.gameWindowItemWidth / 2,
@@ -66,7 +66,7 @@ function gamePint(fix, x, y) {
 }
 
 function checkFinishState() {
-  for (let i = 0; i < itemsPorperty.columnNum * itemsPorperty.lineNum; i++) {
+  for (let i = 0; i < itemsProperty.columnNum * itemsProperty.lineNum; i++) {
     if (pictureItemsArray[i] !== i) {
       return false;
     }
@@ -76,7 +76,7 @@ function checkFinishState() {
 
 function itemLocateByMouse(x, y) {
   return Math.floor(x / gameWindowItemSize.gameWindowItemWidth)
-    + Math.floor(y / gameWindowItemSize.gameWindowItemHeight) * itemsPorperty.columnNum;
+    + Math.floor(y / gameWindowItemSize.gameWindowItemHeight) * itemsProperty.columnNum;
 }
 
 function ActionOnMouseDown(e) {
@@ -130,12 +130,12 @@ function ActionRegistration(flag) {
   }
 }
 
-function updateItemsPorperty() {
+function updateItemsProperty() {
   const columnInput = Math.floor(Number(document.getElementById('column-input').value));
   const lineInput = Math.floor(Number(document.getElementById('line-input').value));
   if (columnInput > 1 && lineInput > 1) {
-    itemsPorperty.columnNum = columnInput;
-    itemsPorperty.lineNum = lineInput;
+    itemsProperty.columnNum = columnInput;
+    itemsProperty.lineNum = lineInput;
   }
 }
 
@@ -143,7 +143,7 @@ function gameStart() {
   if (!isUpLoaded) {
     return;
   }
-  updateItemsPorperty();
+  updateItemsProperty();
   initImgSlice();
   randomIndex();
   gamePint();
