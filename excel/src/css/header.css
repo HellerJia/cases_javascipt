@@ -1,0 +1,49 @@
+header {
+  width: 100%;
+  height: 145px;
+  background-color: #f3f3f3;
+}
+header .font-normal {
+  font: 15px/25px Arial, Helvetica, sans-serif;
+  color: black;
+}
+header .font-normal:hover {
+  font-weight: bold;
+}
+header .bg-normal {
+  float: left;
+  height: 25px;
+  padding: 5px 10px;
+}
+header .bg-normal:hover {
+  background-color: white;
+}
+
+header button {
+  margin: 5px 10px;
+  height: 25px;
+}
+header .h-search-layout {
+  float: left;
+  width: 200px;
+}
+header .h-search-ico {
+  margin: auto 2px;
+  width: 15px;
+  height: 15px;
+}
+header .h-search-text {
+  margin: auto auto;
+  border: none;
+  background: none;
+}
+
+header .header-right {
+  float: right;
+}
+
+header .header-extend {
+  position: absolute;
+  top: 40px;
+  height: 110px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel</title>
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+  <link rel="stylesheet" href="css/header.css">
+  <header>
+    <div id="header-left" class="header-left">
+      <a class="bg-normal font-normal" href="">File</a>
+      <a class="bg-normal font-normal" href="">Home</a>
+      <a class="bg-normal font-normal" href="">Insert</a>
+      <a class="bg-normal font-normal" href="">Draw</a>
+      <a class="bg-normal font-normal" href="">Page Layout</a>
+      <a class="bg-normal font-normal" href="">Formulas</a>
+      <a class="bg-normal font-normal" href="">Data</a>
+      <a class="bg-normal font-normal" href="">Review</a>
+      <a class="bg-normal font-normal" href="">View</a>
+      <a class="bg-normal font-normal" href="">Help</a>
+      <span class="bg-normal h-search-layout flex-row">
+        <img class="h-search-ico" src="resource/search_ico.png" alt="" onclick="debug()">
+        <input type="text" class="h-search-text" placeholder="Search">
+      </span>
+    </div>
+    <div id="header-right" class="header-right flex-row">
+      <button class="h-button-normal">Share</button>
+      <button class="h-button-normal">Comments</button>
+    </div>
+    <div id="header-extend" class="header-extend flex-row">
+      <button id="new-line-button">New line</button>
+      <a id="line-count"></a>
+      <button id="new-column-button">New Column</button>
+      <a id="column-count"></a>
+    </div>
+  </header>
+
+  <link rel="stylesheet" href="css/main_grid.css">
+  <div id="main-window" class="m-top">
+    <div id="m-edit" class="flex-row">
+      <select name="name-box" id="name-box" class="default-border"></select>
+      <div id="edit-buttons" class="default-border"></div>
+      <input type="text" id="m-item-input" class="default-border">
+    </div>
+    <div id="m-grid-box" class="position-relative">
+      <div id="resize-height-button-box" class="resize-button-box"></div>
+      <div id="resize-width-button-box" class="resize-button-box"></div>
+      <div id="column-headers" class="flex-row">
+        <a id="triangle-box" class="line-header column-header default-border default-item-size">/</a>
+      </div>
+    </div>
+  </div>
+  <script src="script/main.js"></script>
+  <script src="script/item_opt.js"></script>
+  <script src="script/grid_opt.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  background-color: #dddddd;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background-color: white;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+button:hover {
+  background-color: #dddddd;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.position-relative {
+  position: relative;
+}

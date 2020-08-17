@@ -1,0 +1,83 @@
+.m-top {
+  position: absolute;
+  top: 150px;
+}
+
+#main-window #m-edit {
+  padding: 5px;
+}
+#main-window #m-edit #name-box {
+  height: 25px;
+  width: 100px;
+}
+#main-window #m-edit #edit-buttons {
+  height: 23px;
+  width: 100px;
+  background-color: white;
+  margin-left: 60px;
+}
+#main-window #m-edit #m-item-input {
+  width: 1000px;
+  margin-left: 5px;
+}
+#main-window #m-edit .default-border {
+  border: 1px solid gray;
+}
+
+
+#main-window #m-grid-box{
+  --column-header-height: 20px;
+}
+
+#main-window #m-grid-box {
+  padding: 5px 5px 0;
+}
+#main-window #m-grid-box .default-border {
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+#main-window #m-grid-box .line-header {
+  text-align: center;
+  width: 30px!important;
+}
+#main-window #m-grid-box .column-header {
+  text-align: center;
+  height: var(--column-header-height)!important;
+}
+#main-window #m-grid-box .default-item-size {
+  display: inline-block;
+  padding: 0;
+  width: 70px;
+  height: 22px;
+}
+#main-window #m-grid-box #resize-width-button-box {
+  position: absolute;
+  left: 39px;
+}
+#main-window #m-grid-box .resize-width-button {
+  float: left;
+  padding: 0;
+  width: 6px;
+  margin-left: 65px;
+  background: none;
+  cursor: col-resize;
+}
+
+#main-window #m-grid-box #resize-height-button-box {
+  position: absolute;
+  top: 28px;
+}
+#main-window #m-grid-box .resize-height-button {
+  display: block;
+  padding: 0;
+  height: 4px;
+  margin-top: 19px;
+  background: none;
+  cursor: row-resize;
+}
+
+#main-window #m-grid-box .item:hover {
+  cursor: all-scroll;
+}
