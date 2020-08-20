@@ -49,19 +49,18 @@
 #main-window #m-grid-box .default-item-size {
   display: inline-block;
   padding: 0;
-  width: 70px;
-  height: 22px;
+  margin: 0;
 }
 #main-window #m-grid-box #resize-width-button-box {
   position: absolute;
   left: 39px;
 }
-#main-window #m-grid-box .resize-width-button {
+#main-window #m-grid-box .column-header-button {
   float: left;
   padding: 0;
-  width: 6px;
-  margin-left: 65px;
   background: none;
+}
+#main-window #m-grid-box .resize-width-button {
   cursor: col-resize;
 }
 
@@ -69,12 +68,12 @@
   position: absolute;
   top: 28px;
 }
-#main-window #m-grid-box .resize-height-button {
+#main-window #m-grid-box .line-header-button {
   display: block;
   padding: 0;
-  height: 4px;
-  margin-top: 19px;
   background: none;
+}
+#main-window #m-grid-box .resize-height-button {
   cursor: row-resize;
 }
 

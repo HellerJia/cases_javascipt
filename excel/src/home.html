@@ -30,10 +30,16 @@
       <button class="h-button-normal">Comments</button>
     </div>
     <div id="header-extend" class="header-extend flex-row">
-      <button id="new-line-button">New line</button>
-      <a id="line-count"></a>
+      <button id="new-line-button">New Row</button>
       <button id="new-column-button">New Column</button>
-      <a id="column-count"></a>
+      <input type="text" name="" id="insert-line-idx" style="height: 30px; width: 40px; margin-left: 90px;">
+      <button id="insert-line-button">Insert Row</button>
+      <input type="text" name="" id="insert-column-idx" style="height: 30px; width: 40px; margin-left: 90px;">
+      <button id="insert-column-button">Insert Column</button>
+      <input type="text" name="" id="delete-line-idx" style="height: 30px; width: 40px; margin-left: 90px;">
+      <button id="delete-line-button">Delete Row</button>
+      <input type="text" name="" id="delete-column-idx" style="height: 30px; width: 40px; margin-left: 90px;">
+      <button id="delete-column-button">Delete Column</button>
     </div>
   </header>
 
@@ -52,8 +58,19 @@
       </div>
     </div>
   </div>
+
+  <link rel="stylesheet" href="css/menu.css">
+  <div id="menu-box">
+    <div id="insert-menu" class="menu-button"></div>
+    <div id="delete-menu" class="menu-button"></div>
+  </div>
+
   <script src="script/main.js"></script>
-  <script src="script/item_opt.js"></script>
-  <script src="script/grid_opt.js"></script>
+  <script src="script/item/item_constructor.js"></script>
+  <script src="script/item/item_selector.js"></script>
+  <script src="script/grid/grid_constructor.js"></script>
+  <script src="script/grid/grid_render.js"></script>
+  <script src="script/grid/grid_resize.js"></script>
+  <script src="script/grid/grid_main.js"></script>
 </body>
 </html>
