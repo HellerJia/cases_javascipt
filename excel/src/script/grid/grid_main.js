@@ -1,5 +1,7 @@
 /* global main */
 
+const { mBox } = main;
+
 document.getElementById('new-line-button').addEventListener('click', () => {
   main.gridRender.fillNewRow(
     main.gridConstructor.newRow(document.getElementById('m-grid-box').rowList.length + 1),
@@ -12,20 +14,40 @@ document.getElementById('new-column-button').addEventListener('click', () => {
 }, false);
 
 document.getElementById('insert-line-button').addEventListener('click', () => {
+  const idx = parseInt(document.getElementById('insert-line-idx').value, 10);
+  if (!idx || idx <= 0 || idx > mBox.rowList.length + 1) {
+    alert('invalid input');
+    return;
+  }
   main.gridRender.fillNewRow(
-    main.gridConstructor.newRow(parseInt(document.getElementById('insert-line-idx').value, 10)),
+    main.gridConstructor.newRow(idx),
   );
 }, false);
 document.getElementById('insert-column-button').addEventListener('click', () => {
+  const idx = parseInt(document.getElementById('insert-column-idx').value, 10);
+  if (!idx || idx <= 0 || idx > mBox.columnList.length + 1) {
+    alert('invalid input');
+    return;
+  }
   main.gridRender.fillNewColumn(
-    main.gridConstructor.newColumn(parseInt(document.getElementById('insert-column-idx').value, 10)),
+    main.gridConstructor.newColumn(idx),
   );
 }, false);
 document.getElementById('delete-line-button').addEventListener('click', () => {
-  main.gridRender.removeRow(parseInt(document.getElementById('delete-line-idx').value, 10));
+  const idx = parseInt(document.getElementById('delete-line-idx').value, 10);
+  if (!idx || idx <= 0 || idx > mBox.rowList.length) {
+    alert('invalid input');
+    return;
+  }
+  main.gridRender.removeRow(idx);
 }, false);
 document.getElementById('delete-column-button').addEventListener('click', () => {
-  main.gridRender.removeColumn(parseInt(document.getElementById('delete-column-idx').value, 10));
+  const idx = parseInt(document.getElementById('delete-column-idx').value, 10);
+  if (!idx || idx <= 0 || idx > mBox.columnList.length) {
+    alert('invalid input');
+    return;
+  }
+  main.gridRender.removeColumn(idx);
 }, false);
 
 document.getElementById('insert-menu').addEventListener('click', () => {
@@ -49,7 +71,6 @@ document.getElementById('delete-menu').addEventListener('click', () => {
   }
 }, false);
 
-const { mBox } = main;
 mBox.actionDisRegister = () => {};
 mBox.addEventListener('mousedown', (e) => {
   mBox.actionDisRegister();

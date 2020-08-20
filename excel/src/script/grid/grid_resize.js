@@ -1,8 +1,6 @@
 /* global main */
 
 function GridResize() {
-  const { mBox } = main;
-
   function rowResize(b, ref) {
     const row = b.target;
     const curH = row.rowHeight;
@@ -33,10 +31,10 @@ function GridResize() {
   this.onResizeRegister = (b) => {
     const button = b;
     button.onmousedown = (e) => {
-      mBox.onmousemove = onResize(b, e);
-      mBox.onmouseup = () => {
-        mBox.onmousemove = null;
-        mBox.onmouseup = null;
+      document.onmousemove = onResize(b, e);
+      document.onmouseup = () => {
+        document.onmousemove = null;
+        document.onmouseup = null;
       };
     };
   };
