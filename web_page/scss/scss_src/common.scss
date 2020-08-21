@@ -1,0 +1,104 @@
+@function to-px($num) {
+  @return $num + px;
+}
+
+$h-top: 20;
+
+%common-h-font {
+  padding-left: 15px;
+  font: {
+    family: arial,sans-serif;
+    size: 13px;
+  }
+}
+
+%common-sign-in {
+  margin-left: 15px;
+  line-height: 28px;
+  padding: 0 12px;
+  font: {
+    family: arial,sans-serif;
+    size: 13px;
+    weight: bold;
+  }
+}
+
+%common-google-search {
+  height: 36px;
+  font-size: 14px;
+  padding: 0 16px;
+  color: #5F6368;
+  border: {
+    width: 1px;
+    style: solid;
+    radius: 4px;
+  }
+}
+
+header {
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  #header-left {
+    margin-top: to-px($h-top);
+    margin-left: 10px;
+  }
+
+  #header-right {
+    position: absolute;
+    top: to-px($h-top);
+    left: 800px;
+    right: 0px;
+  }
+
+  #header-right-c {
+    position: absolute;
+    width: 200px;
+    right: 10px;
+  }
+}
+
+#google-img {
+  margin-top: to-px(20 + 89);
+  height: 92px;
+  width: auto;
+}
+
+#google-input-border {
+  margin: 20px auto;
+  width: 582px;
+  height: 40px;
+  border: {
+    color: rgb(223, 225, 229);
+    style: solid;
+    width: 1px;
+    radius: 24px;
+  }
+  background-color: #fff;
+}
+
+#google-input-text {
+  border: none;
+  outline: none;
+  margin-top: 4px;
+  width: 500px;
+  height: 33px;
+  font-size: 16px;
+  background: none;
+}
+
+.theme-box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+}
+
+#theme-select {
+  border: none;
+  padding: 0 10px;
+  font-size: 15px;
+  background: none;
+}

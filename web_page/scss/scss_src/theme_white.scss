@@ -1,0 +1,22 @@
+@use 'common';
+.theme-white {
+  header {
+    .header-font {
+      @extend %common-h-font;
+      color: #000;
+      opacity: 0.75;
+    }
+  
+    #sign-in {
+      @extend %common-sign-in;
+      background-color: #4683ea;
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  #google-search {
+    @extend %common-google-search;
+    background-color: #f2f2f2;
+    border-color: #f2f2f2;
+  }
+}

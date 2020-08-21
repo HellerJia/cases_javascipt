@@ -1,0 +1,31 @@
+@use 'common';
+.theme-black {
+  background-color: #000;
+
+  header {
+    .header-font {
+      @extend %common-h-font;
+      color: #fff;
+      opacity: 0.75;
+    }
+  
+    #sign-in {
+      @extend %common-sign-in;
+      background-color: #fff;
+      color: #000;
+    }
+  }
+
+  #google-search {
+    @extend %common-google-search;
+    background-color: #fff;
+    border-color: #fff;
+  }
+
+  #theme-select {
+    color: #fff;
+    option {
+      background-color: rgb(131, 131, 131);
+    }
+  }
+}

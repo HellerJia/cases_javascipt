@@ -1,0 +1,136 @@
+.theme-black header .header-font, .theme-blue header .header-font, .theme-white header .header-font {
+  padding-left: 15px;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+
+.theme-black header #sign-in, .theme-blue header #sign-in, .theme-white header #sign-in {
+  margin-left: 15px;
+  line-height: 28px;
+  padding: 0 12px;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.theme-black #google-search, .theme-blue #google-search, .theme-white #google-search {
+  height: 36px;
+  font-size: 14px;
+  padding: 0 16px;
+  color: #5F6368;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+}
+
+header a {
+  display: inline-block;
+  text-decoration: none;
+}
+header #header-left {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+header #header-right {
+  position: absolute;
+  top: 20px;
+  left: 800px;
+  right: 0px;
+}
+header #header-right-c {
+  position: absolute;
+  width: 200px;
+  right: 10px;
+}
+
+#google-img {
+  margin-top: 109px;
+  height: 92px;
+  width: auto;
+}
+
+#google-input-border {
+  margin: 20px auto;
+  width: 582px;
+  height: 40px;
+  border-color: #dfe1e5;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 24px;
+  background-color: #fff;
+}
+
+#google-input-text {
+  border: none;
+  outline: none;
+  margin-top: 4px;
+  width: 500px;
+  height: 33px;
+  font-size: 16px;
+  background: none;
+}
+
+.theme-box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+}
+
+#theme-select {
+  border: none;
+  padding: 0 10px;
+  font-size: 15px;
+  background: none;
+}
+
+.theme-white header .header-font {
+  color: #000;
+  opacity: 0.75;
+}
+.theme-white header #sign-in {
+  background-color: #4683ea;
+  color: white;
+}
+.theme-white #google-search {
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+}
+
+.theme-blue {
+  background-color: #add7ff;
+}
+.theme-blue header .header-font {
+  color: #000;
+  opacity: 0.75;
+}
+.theme-blue header #sign-in {
+  background-color: #34e0b5;
+  color: white;
+}
+.theme-blue #google-search {
+  background-color: #34e0b5;
+  border-color: #34e0b5;
+}
+
+.theme-black {
+  background-color: #000;
+}
+.theme-black header .header-font {
+  color: #fff;
+  opacity: 0.75;
+}
+.theme-black header #sign-in {
+  background-color: #fff;
+  color: #000;
+}
+.theme-black #google-search {
+  background-color: #fff;
+  border-color: #fff;
+}
+.theme-black #theme-select {
+  color: #fff;
+}
+.theme-black #theme-select option {
+  background-color: #838383;
+}
