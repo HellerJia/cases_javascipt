@@ -1,0 +1,33 @@
+@mixin theme-func($theme) {
+  .#{$theme} {
+    header {
+      .header-font {
+        color: $header-font-color;
+        opacity: $header-font-opacity;
+      }
+    
+      #sign-in {
+        background-color: $sign-in-background-color;
+        color: $sign-in-color;
+      }
+    }
+  
+    #google-search {
+      background-color: $google-search-background-color;
+      border-color: $google-search-border-color;
+      &:hover {
+        background-color: $google-search-background-color-hover;
+        border-color: $google-search-border-color-hover;
+      }
+    }
+  }
+}
+
+@import 'theme_white.scss';
+@include theme-func($theme: theme-white);
+
+@import 'theme_blue.scss';
+@include theme-func($theme: theme-blue);
+
+@import 'theme_black.scss';
+@include theme-func($theme: theme-black);

@@ -1,39 +1,10 @@
+@import 'theme.scss';
+
 @function to-px($num) {
   @return $num + px;
 }
 
 $h-top: 20;
-
-%common-h-font {
-  padding-left: 15px;
-  font: {
-    family: arial,sans-serif;
-    size: 13px;
-  }
-}
-
-%common-sign-in {
-  margin-left: 15px;
-  line-height: 28px;
-  padding: 0 12px;
-  font: {
-    family: arial,sans-serif;
-    size: 13px;
-    weight: bold;
-  }
-}
-
-%common-google-search {
-  height: 36px;
-  font-size: 14px;
-  padding: 0 16px;
-  color: #5F6368;
-  border: {
-    width: 1px;
-    style: solid;
-    radius: 4px;
-  }
-}
 
 header {
   a {
@@ -57,6 +28,25 @@ header {
     position: absolute;
     width: 200px;
     right: 10px;
+  }
+
+  .header-font {
+    padding-left: 15px;
+    font: {
+      family: arial,sans-serif;
+      size: 13px;
+    }
+  }
+
+  #sign-in {
+    margin-left: 15px;
+    line-height: 28px;
+    padding: 0 12px;
+    font: {
+      family: arial,sans-serif;
+      size: 13px;
+      weight: bold;
+    }
   }
 }
 
@@ -87,6 +77,18 @@ header {
   height: 33px;
   font-size: 16px;
   background: none;
+}
+
+#google-search {
+  height: 36px;
+  font-size: 14px;
+  padding: 0 16px;
+  color: #5F6368;
+  border: {
+    width: 1px;
+    style: solid;
+    radius: 4px;
+  }
 }
 
 .theme-box {

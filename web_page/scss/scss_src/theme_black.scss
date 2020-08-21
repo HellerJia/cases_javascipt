@@ -1,26 +1,15 @@
-@use 'common';
+$header-font-color: #fff;
+$header-font-opacity: 0.75;
+
+$sign-in-background-color: #fff;
+$sign-in-color: #000;
+
+$google-search-background-color: #fff;
+$google-search-border-color: #fff;
+$google-search-background-color-hover: #a5a5a5;
+$google-search-border-color-hover: #a5a5a5;
 .theme-black {
   background-color: #000;
-
-  header {
-    .header-font {
-      @extend %common-h-font;
-      color: #fff;
-      opacity: 0.75;
-    }
-  
-    #sign-in {
-      @extend %common-sign-in;
-      background-color: #fff;
-      color: #000;
-    }
-  }
-
-  #google-search {
-    @extend %common-google-search;
-    background-color: #fff;
-    border-color: #fff;
-  }
 
   #theme-select {
     color: #fff;
