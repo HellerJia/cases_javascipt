@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Http Request</title>
+</head>
+<body>
+  <select name="req-type" id="req-type">
+    <option value="GET">GET</option>
+    <option value="POST">POST</option>
+  </select>
+  <p>Request url: <input type="text" name="req-url" id="req-url"></p>
+  <p id="post-data-p" style="display: none">POST data: <input type="text" name="post-data" id="post-data"></p>
+  <br/>
+  <p>Set Header</p>
+  <p>key: <input type="text" name="header-key" id="header-key"></p>
+  <p>value: <input type="text" name="header-value" id="header-value"></p>
+  <button id="set-header-button">Set Header</button>
+  <br/><br/><br/>
+  <button id="send-button">Send</button>
+  <button id="clear-button">Clear</button>
+  <br/><br/><br/>
+  <p>Request Text:</p>
+  <p id="req-text"></p>
+  <br/><br/><br/>
+  <p>Response Text:</p>
+  <p id="rsp-text"></p>
+  <script src="script.js"></script>
+</body>
+</html>
