@@ -33,10 +33,10 @@ export class HttpRequest {
   }
 
   public static async SendRequest(header: RequestHeader, out: any, data?: string): Promise<void> {
-    await HttpRequest.newRequestPromise(header, data).then((value) => {
-      out.responseText = value;
-    }, (value) => {
-      console.log(value);
-    });
+    try {
+      await HttpRequest.newRequestPromise(header, data);
+    } catch(e) {
+      console.log(e);
+    }
   }
 }

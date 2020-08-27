@@ -12,8 +12,8 @@ class HttpClient {
     this.reqUrl = url;
   }
 
-  public SendReq() {
-    HttpRequest.SendRequest(new RequestHeader(this.reqUrl, this.reqType), this.rspBody);
+  public async SendReq() {
+    await HttpRequest.SendRequest(new RequestHeader(this.reqUrl, this.reqType), this.rspBody);
   }
 }
 
@@ -33,7 +33,7 @@ document.getElementById('clear-button').onclick = () => {
   document.getElementById('rsp-text').innerHTML = null;
 };
 
-document.getElementById('send-button').onclick = () => {
-  httpClient.SendReq();
-  document.getElementById('rsp-text').innerHTML = httpClient.rspBody.responseText;
+document.getElementById('send-button').onclick = async () => {
+  const rspText = await httpClient.SendReq();
+  document.getElementById('rsp-text').innerHTML = rspText as any;
 };
